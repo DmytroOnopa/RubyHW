@@ -3,17 +3,22 @@ line = '______________________________'
 
 puts "Дан массив: #{array}"
 
+
 puts "Кол-во элементов в массиве: #{array.size}"
   puts line
+
 
 puts "Перевернутый массив: #{array.reverse}"
   puts line
 
+
 puts "Найбольшее число в массиве: #{array.max}"
   puts line
 
+
 puts "Найменьшее число в массиве: #{array.min}"
   puts line
+
 
 puts "Отсортирован по возрастанию: #{array.sort}"
   puts line
@@ -45,6 +50,7 @@ puts "Три найменьших элеманта: #{array.min(3)}"
 
 puts "Элементы, которые находятся перед минимальным числом в массиве: #{array[0...array.index(array.min)]}"
   puts line
+
 
   tmp_array = [array.index(array.min),array.index(array.max)].sort
 puts "Минимальный и максимальный элементы массива поменялись местами: #{tmp_array}"
