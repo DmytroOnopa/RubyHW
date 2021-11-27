@@ -6,7 +6,7 @@ class Fish
   def initialize(name)
     @name = name
     @health = 100
-    @mood = 50
+    @mood = 80
     @sleep_indicator = 0
     @fish_mana = 50
     @hunger_indicator = 50
@@ -20,7 +20,7 @@ class Fish
   def help
     puts '                >Fish commands list: '
     puts '[1] Feed'
-    puts '[2] Walk'
+    puts '[2] Fun pvp'
     puts '[3] WC'
     puts '[4] Mana regeneration'
     puts '[5] Healing'
@@ -32,7 +32,7 @@ class Fish
   end
 
   def feed
-    puts "#{@name} fish feed"
+    puts "#{@name} the fish ate the +5 food"
     @hunger_indicator += 5
     @sleep_indicator -= 5
     @fish_mana -= 5
@@ -42,21 +42,23 @@ class Fish
     end
   end
 
-  def walk
-    puts "#{@name} fish wolking"
+  def pvp
+    puts "#{@name} WINS in fish fighting!!"
     @mood += 5
-    @fish_mana -= 5
+    @fish_mana -= 10
+    @health -= 15
     if @mood > 100
-      @mood =  100 - 50
+      @heals =  100 - 50
+      puts "#{@name} LOSS in fish fighting! =("
       TimePeriod()
     end
   end
 
   def toilet
-    puts "#{@name} want to WC"
-    @fish_wc -= 5
+    puts "#{@name} clean up - 10 fish shit"
+    @fish_wc -= 10
     @sleep_indicator += 5
-    @fish_mana -= 5
+    @fish_mana -= 10
     if @fish_wc.negative?
       @fish_wc = 0
       TimePeriod()
@@ -67,8 +69,8 @@ class Fish
     puts "#{@name} regenerated +5 mana"
     @fish_mana += 5
     @sleep_indicator += 5
-    if @fish_mana > 100
-      @fish_mana = 100
+    if @fish_mana > 50
+      @fish_mana = 50
       TimePeriod()
     end
   end
@@ -97,21 +99,21 @@ class Fish
   def sleeping
     @sleep_indicator += 5
     if @sleep_indicator <= 20
-      puts 'Need to sleep'
+      puts "#{@name} already sleeping"
       @health += 5
       @fish_mana -= 5
     else
-      @fish_mana += 5
+      @fish_mana -= 5
     end
     TimePeriod()
   end
 
   def bathe
     puts "#{@name} Fish is washing."
-    @fish_mana += 5
+    @fish_mana -= 5
     @sleep_indicator += 5
-    if @fish_mana > 100
-      @fish_mana = 100
+    if @fish_mana < 0
+      puts 'Mana is over!'
       TimePeriod()
     end
   end
@@ -143,17 +145,17 @@ class Fish
       @hunger_indicator -= 5
       @mood -= 5
     end
-    if @fish_mana >= 20
-      @health -= 5
-      # puts 'Low level mana!'
+    if @fish_mana <= 20
+      #@health -= 5
+       puts 'Low level mana!'
     end
     if @fish_mana <= 0
-      @fish_mana = 0
+      @health -= 5
       puts 'Fish mana is over!'
     end
     puts 'Fish wants a sleep' if @sleep_indicator >= 80
     if @sleep_indicator >= 100
-      puts 'Fish falls asleep'
+      puts "#{@name} sleeping in water and get 50 damage"
       @health -= 50
     end
     @sleep_indicator = 100 if @sleep_indicator >= 100
@@ -177,7 +179,7 @@ while menuSelect != 0
     fish.DisplayingInformation()
     menuSelect = gets.chomp.to_i
   when 2
-    fish.walk
+    fish.pvp
     fish.DisplayingInformation()
     menuSelect = gets.chomp.to_i
   when 3
