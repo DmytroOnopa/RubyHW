@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 puts 'Choose a name for your fish: '
 
 class Fish
@@ -37,7 +35,8 @@ class Fish
     @sleep_indicator -= 5
     @fish_mana -= 5
     if @hunger_indicator > 100
-      @hunger_indicator = 100 - 50
+      @health = 100 - 50
+      puts "#{@name} ate to mach! He gew 50 damage!"
       TimePeriod()
     end
   end
