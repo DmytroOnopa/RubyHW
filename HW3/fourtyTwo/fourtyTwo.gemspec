@@ -7,6 +7,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Dmytro Onopa"]
   s.email       = 'dmytro.onopa@gmail.com'
   s.files       = ["lib/fourtyTwo.rb"]
-  s.homepage    = 'https://github.com/DmytroOnopa/RubyHW'
+  s.homepage    = 'https://github.com/DmytroOnopa/RubyHW/HW3/fourtyTwo'
   s.license = 'MIT'
 end
