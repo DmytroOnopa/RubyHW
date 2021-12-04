@@ -12,7 +12,6 @@ class GetHtml
     f.puts "  </head>"
     f.puts "  <body>"
     f.puts "    <script>"
-    f.puts "      setInterval(()=>{ window.location.reload() }, 2000)"
     f.puts "    </script>"
     f.puts "    #{markup}"
     f.puts "  </body>"
