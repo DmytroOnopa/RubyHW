@@ -47,7 +47,7 @@ class Fish
     @fish_mana -= 10
     @health -= 15
     if @mood > 100
-      @heals =  100 - 50
+      @heals = 100 - 50
       puts "#{@name} LOSS in fish fighting! =("
       TimePeriod()
     end
@@ -100,10 +100,8 @@ class Fish
     if @sleep_indicator <= 20
       puts "#{@name} already sleeping"
       @health += 5
-      @fish_mana -= 5
-    else
-      @fish_mana -= 5
     end
+    @fish_mana -= 5
     TimePeriod()
   end
 
@@ -111,7 +109,7 @@ class Fish
     puts "#{@name} Fish is washing."
     @fish_mana -= 5
     @sleep_indicator += 5
-    if @fish_mana < 0
+    if @fish_mana.negative?
       puts 'Mana is over!'
       TimePeriod()
     end
@@ -145,8 +143,8 @@ class Fish
       @mood -= 5
     end
     if @fish_mana <= 20
-      #@health -= 5
-       puts 'Low level mana!'
+      # @health -= 5
+      puts 'Low level mana!'
     end
     if @fish_mana <= 0
       @health -= 5
