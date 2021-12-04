@@ -1,7 +1,9 @@
 class GetHtml
-  def get(file_name = 'index.html')
-    inputContent = gets.chomp
-    inputContent = file_name if inputContent == ''
+  def get(content, bypass_html, file_name = 'index.html')
+#    markup = gets.chomp
+    markup = content.gsub!(/[<>]/, '') if bypass_html == false
+    markup = content unless bypass_html == false
+
     
     f = File.new("#{Dir.pwd}/#{file_name}", "w+")
     f.puts "<!DOCTYPE html>"
@@ -13,7 +15,7 @@ class GetHtml
     f.puts "    <script>"
     f.puts "      setInterval(()=>{ window.location.reload() }, 2000)"
     f.puts "    </script>"
-    f.puts "    #{inputContent}"
+    f.puts "    #{markup}"
     f.puts "  </body>"
     f.puts "</html>"
     f.close
@@ -21,4 +23,4 @@ class GetHtml
   end
 end
 
-GetHtml.new.get
+GetHtml.new.get("markup", true)
