@@ -23,3 +23,20 @@ HTML
 end
 
 GetHtml.new.get
+
+
+
+
+
+#<!DOCTYPE html>"
+#  <head>"
+#    <meta charset='utf-8'>"
+#    <title>My Tamago</title>"
+#  </head>"
+#  <body>"
+#    <script>"
+#      setInterval(()=>{ window.location.reload() }, 2000)"
+#    </script>"
+#    #{markup}"
+#  </body>"
+#</html>"
