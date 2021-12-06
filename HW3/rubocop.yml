@@ -1,7 +1,0 @@
-AllCops:
-  NewCops: enable
-
-Documentation:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: false
