@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'rubocop', require: false
-#gem 'getHtml', :git => "git://github.com/DmytroOnopa/RubyHW"
+gem 'getHtml', :git => "git://github.com/DmytroOnopa/RubyHW/HW3/getHtml"
