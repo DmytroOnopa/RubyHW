@@ -28,15 +28,15 @@ puts "Отсортирован по убыванию: #{array.sort.reverse}"
   puts line
 
 
-puts "Без нечетных чисел: #{array.map.select(&:even?)}"
+puts "Без нечетных чисел: #{array.select(&:even?)}"
   puts line
 
 
-puts "Те числа, которые без остатка делятся на 3: #{array.map.select { |el| (el % 3).zero? }}"
+puts "Те числа, которые без остатка делятся на 3: #{array.select { |el| (el % 3).zero? }}"
   puts line
 
 
-puts "Без повторяющихся чисел: #{array.map.uniq}"
+puts "Без повторяющихся чисел: #{array.uniq}"
   puts line
 
 
