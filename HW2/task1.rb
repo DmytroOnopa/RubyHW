@@ -52,7 +52,7 @@ puts "Элементы, которые находятся перед миним�
   puts line
 
 
-tmp_array = [array.index(array.min), array.index(array.max)].sort
+tmp_array = [array.index(array.min), array.index(array.max)]
 puts "Минимальный и максимальный элементы массива поменялись местами: #{tmp_array}"
   puts line
 
