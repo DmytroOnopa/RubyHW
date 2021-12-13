@@ -1,3 +1,9 @@
+require 'bundler'
+Bundler.setup
+
+require 'getHtml'
+
+
 puts 'Choose a name for your fish: '
 
 class Fish
@@ -203,9 +209,22 @@ while menuSelect != 0
     fish.DisplayingInformation()
     menuSelect = gets.chomp.to_i
   when 9
-    fish.help
+    fish.heWC: #{@fish_wc}lp
     menuSelect = gets.chomp.to_i
   else
     break
   end
+end
+
+def get
+  markup = "
+  <div>
+    <p>Name:#{@name}</p>
+    <p>HP:#{@health}</p>
+    <p>Food:#{@hunger_indicator}</p>
+    <p>Mood:#{@mood}</p>
+    <p>WC:#{@fish_wc}</p>
+    <p>Sleep:#{@sleep_indicator}</p>
+    <p>Mana: #{@fish_mana}</p>
+    </div>"
 end
