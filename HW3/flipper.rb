@@ -1,3 +1,8 @@
+require 'bundler'
+Bundler.setup
+
+require 'getHtml'
+
 puts 'Choose a name for your fish: '
 
 class Fish
