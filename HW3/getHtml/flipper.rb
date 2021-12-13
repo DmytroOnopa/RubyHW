@@ -31,6 +31,7 @@ class Fish
     puts '[7] Washing'
     puts '[8] Show fish statistics'
     puts '[9] Show this message'
+    puts '[0] Export fish statistics to HTML file'
     puts 'Press any key to exit!'
   end
 
